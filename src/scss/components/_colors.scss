@@ -1,0 +1,14 @@
+@use 'sass:color';
+$orange:#f08300;
+$orange-dark: color.adjust($orange, $lightness: -20%);
+
+$black:#000;
+
+$gray:#3e3e3e;
+$gray-dark: color.adjust($gray, $lightness: -20%);
+$gray-light: color.adjust($gray, $lightness: 30%);
+$gray-ultralight: color.adjust($gray, $lightness: 70%);
+
+$white:#fff;
+
+$green:#94c2a5;
