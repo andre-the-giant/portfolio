@@ -1,10 +1,89 @@
 @use '../components/fonts';
-header{
-}
-@media only screen and (max-width: 768px) {
 
+@media only screen and (max-width: 1024) {
+
+  @media (orientation: landscape) {
+    body {
+    }
+  }
+  
+  @media (orientation: portrait) {
+    body {
+      background:red !important;
+    }
+  }
+}
+@media only screen and (min-width: 1023) {
+}
+
+
+header{
+  height:2.5rem;
+}
+main{
+  height:calc(100vh - 2.5rem);
+  overflow-y: auto;
+}
+.title{
+    font-family: PirataOne; 
+    font-size:2rem;
+    transition: all .25s linear;
+    // paint-order: stroke fill;
+    // -webkit-text-stroke: 5px #ffffff;
+    color:rgba(0,0,0,0);
+    background-image: url(../img/cloud.jpg);
+    background-clip: text;
+    animation: titleanimation 45s ease-in-out infinite;
+    margin:0 20px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    i{display: inline; img{max-width: 2ch;}}
+    // transform: rotate(-5deg) skewX(20deg);
+}
+
+@media only screen and (min-width: 320px) {
+  .title{font-size:2.5rem;}
+  header{
+    height:3rem;
+  }
+  main{
+    height:calc(100vh - 3rem);
+  }
+}
+@media only screen and (min-width: 400px) {
+  .title{font-size:3rem;}
+  header{
+    height:4rem;
+  }
+  main{
+    height:calc(100vh - 4rem);
+  }
+}
+@media only screen and (min-width: 500px) {
+  .title{font-size:4rem;}
+  header{
+    height:5rem;
+  }
+  main{
+    height:calc(100vh - 5rem);
+  }
+}
+@media only screen and (min-width: 600px) {
+  .title{font-size:5rem;}
+  header{
+    height:6rem;
+  }
+  main{
+    height:calc(100vh - 6rem);
+  }
 }
 @media only screen and (min-width: 767px) {
+  .title{font-size:6rem;width: 700px;margin: 0 auto}
+  header{
+    height:9rem;
+    padding-top: 1rem;
+  }
+  main{
+    height: calc(100vh - 9rem);
+  }
 }
-
-h1{font-family: Blaka; font-size:20px;}

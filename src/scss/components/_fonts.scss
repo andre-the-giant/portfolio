@@ -1,25 +1,22 @@
 @font-face {
-  font-family: 'Blaka';
-  src:url('../fonts/Blaka-Regular.woff2') format('woff2');
+  font-family: 'PirataOne';
+  src:url('/fonts/PirataOne.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Noto-light';
-  src:url('../fonts/NotoSans-Light.woff2') format('woff2');
+  src:url('/fonts/NotoSans-Light.woff2') format('woff2');
 }
-@font-face {
-  font-family: 'Noto-xlight';
-  src:url('../fonts/NotoSans-ExtraLight.woff2') format('woff2');
-}
-$font-header:Noto-light, Arial, Helvetica, sans-serif;
-$font-heavy:Blaka, system-ui;
-$font-default:Noto-xlight,sans-serif;
 
-body{
-  font-family: $font-default;
+:root {
+  --font-heavy:PirataOne, system-ui;
+  --font-default:Noto-light, Arial, Helvetica, sans-serif;
 }
+
+body {
+  font-family: var(--font-default);
+}
+
+
 h1,h2,h3,h4,h5,h6{
-  font-family: $font-heavy;
-  text-transform: uppercase;
-}
-a{
+  font-family: var(--font-heavy);
 }

@@ -1,14 +1,20 @@
 @use 'sass:color';
-$orange:#f08300;
-$orange-dark: color.adjust($orange, $lightness: -20%);
 
-$black:#000;
+:root {
+    --background: #ffffff;
+    --foreground: #025072;
+    --foreground-filter:invert(15%) sepia(97%) saturate(2664%) hue-rotate(182deg) brightness(87%) contrast(98%);
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #000;
+      --foreground: #54b1da;
+      --foreground-filter: invert(67%) sepia(22%) saturate(1159%) hue-rotate(157deg) brightness(94%) contrast(80%);
+    }
+  }
 
-$gray:#3e3e3e;
-$gray-dark: color.adjust($gray, $lightness: -20%);
-$gray-light: color.adjust($gray, $lightness: 30%);
-$gray-ultralight: color.adjust($gray, $lightness: 70%);
-
-$white:#fff;
-
-$green:#94c2a5;
+  body {
+    color: var(--foreground);
+    background: var(--background);
+  }

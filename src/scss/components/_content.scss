@@ -1,0 +1,195 @@
+.divgrid{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap:1rem;
+}
+.childgrid{
+  background-color:lightblue;
+  min-height:30vh;
+
+  &:nth-child(1), &:nth-child(2) , &:nth-child(3){
+    grid-column:span 2;
+  }
+  &:nth-child(4){
+    grid-column:span 6;
+    background-color: lightgreen;
+  }
+  &:nth-child(5), &:nth-child(6){
+    grid-column:span 3;
+  }
+}
+
+@media only screen and (min-width: 640px) {
+  .divgrid{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .childgrid{
+    
+    &:nth-child(1), &:nth-child(2) , &:nth-child(3){
+      grid-column:auto;
+    }
+    &:nth-child(4){
+      grid-column: span 2;
+      grid-row: span 2;
+      background-color: lightgreen;
+    }
+    &:nth-child(5), &:nth-child(6){
+      grid-column: auto ;
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .divgrid{
+    width:1000px;
+    margin:auto;
+  }
+}
+
+
+
+.screen{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    max-width:100%;
+}
+
+.home4 {
+    font-family: var(--font-heavy);
+  }
+  
+  .home4 > div {
+    margin:0 1rem 2rem;
+    // transform: rotate(-5deg) skewX(10deg);
+    a{
+      position:relative;
+      &:hover::before{ 
+        content: "";
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        border-left: 24px solid var(--foreground);
+        border-right: 12px solid transparent;
+        border-top: 12px solid var(--foreground);
+        border-bottom: 20px solid transparent;
+        left: 32px;
+        top: -18px;
+      }
+      &:hover::after{
+        position:absolute;
+        display: block;
+        font-family: var(--font-default);
+        font-size: .8rem;
+        text-align: center;
+        line-height: 1.2rem;
+        top:-1.2rem;
+        padding: 2px 8px;
+        border-radius: 20px;
+        left:0;
+        background:var(--foreground);
+        color:var(--background);
+        content: attr(title);
+        width:160px;
+      }
+    }
+    img {
+      filter: var(--foreground-filter);
+      width:50px;
+    }
+  }
+  .home4 > div:nth-child(1){
+    justify-content: end;
+    align-items: end;
+    font-size:2rem;
+    line-height: 1.8rem;
+  }
+  .home4 > div:nth-child(2){
+    justify-content: start;
+    align-items: end;
+    font-size:4rem;
+    line-height: 3.2rem;
+  }
+  .home4 > div:nth-child(3){
+    justify-content: end;
+    align-items: start;
+    font-size:3rem;
+    line-height: 2.8rem;
+  }
+  .home4 > div:nth-child(4){
+    justify-content: start;
+    align-items: start;
+    font-size:3.82rem;
+  }
+
+
+@media only screen and (min-width: 600px) {
+  .home4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 80%; /* Adjust as needed */
+    width: 80%;  /* Adjust as needed */
+    gap: 1rem;
+    margin: auto;
+  }
+  .home4 > div {
+    display: flex;
+  }
+
+  .home4 > div:nth-child(2){
+    justify-content: start;
+    align-items: end;
+    font-size:5rem;
+    line-height: 4rem;
+  }
+}
+
+
+
+.skills{
+  padding:5px 10px;
+  position: relative;
+  &::before{
+    content: " ";
+    pointer-events: none;
+  position: absolute;top:0;right:0;bottom:0;left:0  ;
+  background-image: linear-gradient(to bottom, color-mix(in srgb, var(--background) 0%, transparent) 80%, color-mix(in srgb, var(--background) 100%, transparent) 95%);
+  }
+}
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Space between pills */
+  margin: 10px 0;
+  align-items: center; /* Ensures vertical alignment */;  
+  overflow-y: auto;
+}
+
+.skills span {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 20px;
+  background-color: var(--foreground); 
+  color: var(--background);; 
+  font-size: .8rem;
+  font-weight: 500; 
+  text-transform: uppercase;
+  cursor: default;
+  transition: background-color 0.3s ease;
+}
+
+.skill:hover {
+  background-color: #6f9ae6; /* Slightly darker blue on hover */
+}
+
+#skills-search {
+  width: 100%; /* Takes full container width */
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid var(--foreground);
+  color:var(--foreground);
+  font-size: .8rem;
+}

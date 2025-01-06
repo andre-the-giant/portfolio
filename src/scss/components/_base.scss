@@ -67,7 +67,3 @@ $center-col-width: 800px;
 .loader:after{
   transform: rotate(60deg);
 }
-@keyframes load {
-  from {transform: rotate(0turn)}
-  to   {transform: rotate(1turn)}
-}
